@@ -67,7 +67,6 @@ diag_units = [[rows[i] + cols[i] for i in range(len(rows))], [rows[i] + reverse_
 unitlist = row_units + column_units + square_units + diag_units 
 units = dict((s, [u for u in unitlist if s in u]) for s in boxes)
 peers = dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
-
     
 
 def grid_values(grid):
@@ -178,8 +177,7 @@ def solve(grid):
     """
     values = grid_values(grid)
     new_values = search(values)
-    return new_values
-    
+    return new_values    
     
    
 if __name__ == '__main__':
